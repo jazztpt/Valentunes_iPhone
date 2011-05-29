@@ -17,7 +17,7 @@ static WebService *sharedWebService = nil;
 #define kApiUrl				@"http://127.0.0.1:8000/api/"
 //#define kApiAuthenticate	@"authenticate/"
 //#define kApiUserData		@"userdata/"
-#define kApiSuffixCreate	@"card"		//@"createcard/"
+#define kApiSuffixCreate	@"card/"		//@"createcard/"
 #define kApiSuffixPhone		@"phonecall/"
 
 

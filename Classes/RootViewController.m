@@ -11,6 +11,7 @@
 #import "ChooseSongsViewController.h"
 #import "JSON.h"
 #import "Song.h"
+#import "Track.h"
 #import "WebService.h"
 
 
@@ -109,15 +110,15 @@
 
 -(void) createCallbackReturn:(NSArray*)responseArray
 {
-	// create the song objects
-	NSMutableArray* songsArray = [NSMutableArray array];
-	for (NSDictionary* songDict in responseArray) {
-		Song* song = [Song songWithDictionary:songDict];
-		[songsArray addObject:song];
+	// create the track objects
+	NSMutableArray* tracksArray = [NSMutableArray array];
+	for (NSDictionary* trackDict in responseArray) {
+		Track* track = [Track trackWithDictionary:trackDict];
+		[tracksArray addObject:track];
 	}
 	
 	ChooseSongsViewController* chooseController = [[[ChooseSongsViewController alloc] initWithNibName:@"ChooseSongsViewController" bundle:nil] autorelease];
-	chooseController.songsArray = songsArray;
+	chooseController.songsArray = tracksArray;
 	[self.navigationController pushViewController:chooseController animated:YES];
 	
 //	// start the timer to poll the server for tracks

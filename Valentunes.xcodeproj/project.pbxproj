@@ -15,6 +15,10 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		4919C89F1391DDC000A1927C /* Valentunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4919C89D1391DDC000A1927C /* Valentunes.xcdatamodeld */; };
+		4919C8A51391DDF800A1927C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4919C8A41391DDF800A1927C /* CoreData.framework */; };
+		4919C8AC1391DF0D00A1927C /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919C8A91391DF0D00A1927C /* Track.m */; };
+		4919C8AD1391DF0D00A1927C /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919C8AB1391DF0D00A1927C /* Card.m */; };
 		951AFC0A130838F800CEC086 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 951AFC09130838F800CEC086 /* heart.png */; };
 		951AFD971308615300CEC086 /* album1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD931308615300CEC086 /* album1.jpg */; };
 		951AFD981308615300CEC086 /* album2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD941308615300CEC086 /* album2.jpg */; };
@@ -72,6 +76,12 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4919C89E1391DDC000A1927C /* Valentunes.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Valentunes.xcdatamodel; sourceTree = "<group>"; };
+		4919C8A41391DDF800A1927C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4919C8A81391DF0D00A1927C /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		4919C8A91391DF0D00A1927C /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		4919C8AA1391DF0D00A1927C /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		4919C8AB1391DF0D00A1927C /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Valentunes-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Valentunes-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		951AFC09130838F800CEC086 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		951AFD931308615300CEC086 /* album1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album1.jpg; sourceTree = "<group>"; };
@@ -158,6 +168,7 @@
 				95CB543E1307421E00FE0CB5 /* SystemConfiguration.framework in Frameworks */,
 				95CB54421307422100FE0CB5 /* MobileCoreServices.framework in Frameworks */,
 				95CB545C1307437900FE0CB5 /* libz.1.2.3.dylib in Frameworks */,
+				4919C8A51391DDF800A1927C /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +237,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4919C89D1391DDC000A1927C /* Valentunes.xcdatamodeld */,
 				952E53CB13076FDB002A3314 /* images */,
 				95CB539B130735B900FE0CB5 /* mock_song_list.json */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
@@ -241,6 +253,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				4919C8A41391DDF800A1927C /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -438,6 +451,9 @@
 				952E5396130767C0002A3314 /* SongCell.m in Sources */,
 				952E547B13078235002A3314 /* SendViewController.m in Sources */,
 				95F9CC2A130892BA00E4B39D /* FinishedViewController.m in Sources */,
+				4919C89F1391DDC000A1927C /* Valentunes.xcdatamodeld in Sources */,
+				4919C8AC1391DF0D00A1927C /* Track.m in Sources */,
+				4919C8AD1391DF0D00A1927C /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +536,23 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4919C89D1391DDC000A1927C /* Valentunes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4919C8A81391DF0D00A1927C /* Track.h */,
+				4919C8A91391DF0D00A1927C /* Track.m */,
+				4919C8AA1391DF0D00A1927C /* Card.h */,
+				4919C8AB1391DF0D00A1927C /* Card.m */,
+				4919C89E1391DDC000A1927C /* Valentunes.xcdatamodel */,
+			);
+			currentVersion = 4919C89E1391DDC000A1927C /* Valentunes.xcdatamodel */;
+			path = Valentunes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

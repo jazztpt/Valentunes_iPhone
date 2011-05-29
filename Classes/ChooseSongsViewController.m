@@ -10,6 +10,7 @@
 
 #import "SendViewController.h"
 #import "Song.h"
+#import "Track.h"
 #import "WebService.h"
 
 
@@ -69,17 +70,17 @@
 	
 	cell.tag = indexPath.row;
 	
-	Song* thisSong = [_songsArray objectAtIndex:indexPath.row];
+	Track* thisTrack = [_songsArray objectAtIndex:indexPath.row];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-	cell.songTitleLabel.text = thisSong.songName;		//[thisSong objectForKey:@"track_name"];
-	cell.artistLabel.text = thisSong.artistName;			//[thisSong objectForKey:@"artist_name"];
-	cell.searchTermLabel.text = thisSong.searchTerm;		//[thisSong objectForKey:@"reason"];
+	cell.songTitleLabel.text = thisTrack.track_name;		//[thisTrack objectForKey:@"track_name"];
+	cell.artistLabel.text = thisTrack.artist_name;			//[thisTrack objectForKey:@"artist_name"];
+	cell.searchTermLabel.text = thisTrack.search_term;		//[thisTrack objectForKey:@"reason"];
 
-	cell.albumArtString = thisSong.iconUrl;		//[thisSong objectForKey:@"icon_url"];
-	cell.urlString = thisSong.songUrl;		//[thisSong objectForKey:@"audio_url"];
+	cell.albumArtString = thisTrack.icon_url;		//[thisTrack objectForKey:@"icon_url"];
+	cell.urlString = thisTrack.audio_url;		//[thisTrack objectForKey:@"audio_url"];
 	
-	if (thisSong.chosen == YES) {
+	if (thisTrack.chosen == YES) {
 		cell.isChecked = YES;
 		cell.checkMark.hidden = NO;
 	}
