@@ -15,8 +15,9 @@
 static WebService *sharedWebService = nil;
 
 #define kApiUrl				@"http://127.0.0.1:8000/api/"
-#define kApiSuffixInfo		@"card/"
-#define kApiSuffixStatus	@"status/"
+//#define kApiAuthenticate	@"authenticate/"
+//#define kApiUserData		@"userdata/"
+#define kApiSuffixCreate	@"card"		//@"createcard/"
 #define kApiSuffixPhone		@"phonecall/"
 
 
@@ -60,7 +61,7 @@ static WebService *sharedWebService = nil;
 	NSLog(@"posting create; jsondatastring: %@", jsonDataString);
 	NSData* jsonData = [NSData dataWithBytes:[jsonDataString UTF8String] length:[jsonDataString length]];
 //	
-	NSString* url = [NSString stringWithFormat:@"%@%@", kApiUrl, kApiSuffixInfo];
+	NSString* url = [NSString stringWithFormat:@"%@%@", kApiUrl, kApiSuffixCreate];
 	
 //	ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
 //	[request addRequestHeader:@"Content-Type" value:@"multipart/form-data"];
