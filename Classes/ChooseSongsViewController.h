@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SongCell.h"
+#import "Card.h"
+#import "TrackCell.h"
 
 
-@interface ChooseSongsViewController : UITableViewController <SongCellDelegate> {
-	NSArray* _songsArray;
+@interface ChooseSongsViewController : UITableViewController <TrackCellDelegate> {
+    Card* _currentCard;
+    NSArray* _tracksArray;
 	
-	SongCell* _songCell;
+	TrackCell* _trackCell;
 }
 
-@property (nonatomic, retain) NSArray* songsArray;
-@property (nonatomic, retain) IBOutlet SongCell* songCell;
+@property (nonatomic, retain) Card* currentCard;
+@property (nonatomic, retain) NSArray* tracksArray;
+@property (nonatomic, retain) IBOutlet TrackCell* trackCell;
 
 @end

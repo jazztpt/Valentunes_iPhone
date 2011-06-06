@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  CreateViewController.h
 //  Valentunes
 //
 //  Created by Anna Callahan on 2/12/11.
@@ -10,7 +10,7 @@
 
 #import "WebService.h"
 
-@interface RootViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
+@interface CreateViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
 	UITextField* _fromNameTextField;
 	UITextField* _toNameTextField;
 	UITextView*  _interestsTextView;
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) IBOutlet UIButton*    findSongsButton;
 @property (nonatomic, retain) WebService* webService;
 
--(void) sendButtonTapped:(id)sender;
+-(void) findSongsButtonTapped:(id)sender;
 
 
 @end

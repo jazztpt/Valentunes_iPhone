@@ -8,7 +8,7 @@
 
 #import "SendViewController.h"
 #import "FinishedViewController.h"
-#import "Song.h"
+#import "Track.h"
 
 
 @implementation SendViewController
@@ -16,7 +16,7 @@
 @synthesize fromPhoneTextField = _fromPhoneTextField;
 @synthesize toPhoneTextField = _toPhoneTextField;
 @synthesize noteTextView = _noteTextView;
-@synthesize songsToSendArray = _songsToSendArray;
+@synthesize tracksToSendArray = _tracksToSendArray;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -67,21 +67,28 @@
 	webService.delegate = self;
 	
 	// get the array of ids
-	NSMutableArray* songIdsArray = [NSMutableArray array];
-	for (Song* song in _songsToSendArray) {
-		[songIdsArray addObject:song.musicbrainzartistid];
+	NSMutableArray* trackIdsArray = [NSMutableArray array];
+	for (Track* track in _tracksToSendArray) {
+		[trackIdsArray addObject:track.track_mbid];
 	}
 	
 	NSDictionary* dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
 								_fromPhoneTextField.text, @"from_phone",
-								_toPhoneTextField.text, @"to_phone", 
+								_toPhoneTextField.text, @"recipient_phone", 
 								_noteTextView.text, @"note",
-								songIdsArray, @"tracks_array",
+								trackIdsArray, @"tracks_array",
 								nil];
 	[webService phoneCall:dictionary];
 	
 	FinishedViewController* finishedVC = [[FinishedViewController alloc] initWithNibName:@"FinishedViewController" bundle:nil];
 	[self.navigationController pushViewController:finishedVC animated:YES];
+}
+
+#pragma WebServiceDelegate
+
+-(void) webService:(WebService*)webService didFailWithError:(NSError*)error
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,7 +106,7 @@
 
 
 - (void)dealloc {
-	self.songsToSendArray = nil;
+	self.tracksToSendArray = nil;
     [super dealloc];
 }
 

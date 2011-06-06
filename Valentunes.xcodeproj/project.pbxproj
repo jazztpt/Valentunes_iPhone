@@ -13,28 +13,28 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		28C286E10D94DF7D0034E888 /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* CreateViewController.m */; };
 		4919C89F1391DDC000A1927C /* Valentunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4919C89D1391DDC000A1927C /* Valentunes.xcdatamodeld */; };
 		4919C8A51391DDF800A1927C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4919C8A41391DDF800A1927C /* CoreData.framework */; };
 		4919C8AC1391DF0D00A1927C /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919C8A91391DF0D00A1927C /* Track.m */; };
 		4919C8AD1391DF0D00A1927C /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919C8AB1391DF0D00A1927C /* Card.m */; };
+		4919C91F1392FA0F00A1927C /* tutorial_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4919C91E1392FA0F00A1927C /* tutorial_background.png */; };
+		4919CA72139452A300A1927C /* AllCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919CA70139452A300A1927C /* AllCardsTableViewController.m */; };
+		4919CA73139452A300A1927C /* AllCardsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4919CA71139452A300A1927C /* AllCardsTableViewController.xib */; };
+		4919CA771394534400A1927C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919CA761394534400A1927C /* DataManager.m */; };
+		49793E1B139479F8004183FD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49793E19139479F8004183FD /* LoginViewController.m */; };
+		49793E1C139479F8004183FD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49793E1A139479F8004183FD /* LoginViewController.xib */; };
+		49793E8513952CB1004183FD /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49793E8413952CB1004183FD /* CreateViewController.xib */; };
 		951AFC0A130838F800CEC086 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 951AFC09130838F800CEC086 /* heart.png */; };
-		951AFD971308615300CEC086 /* album1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD931308615300CEC086 /* album1.jpg */; };
-		951AFD981308615300CEC086 /* album2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD941308615300CEC086 /* album2.jpg */; };
-		951AFD991308615300CEC086 /* album3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD951308615300CEC086 /* album3.jpg */; };
-		951AFD9A1308615300CEC086 /* album4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 951AFD961308615300CEC086 /* album4.jpg */; };
-		952E5396130767C0002A3314 /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952E5395130767C0002A3314 /* SongCell.m */; };
-		952E5398130767D4002A3314 /* SongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E5397130767D4002A3314 /* SongCell.xib */; };
+		952E5396130767C0002A3314 /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 952E5395130767C0002A3314 /* TrackCell.m */; };
+		952E5398130767D4002A3314 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E5397130767D4002A3314 /* TrackCell.xib */; };
 		952E53CF13077003002A3314 /* Check_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 952E53CC13077003002A3314 /* Check_mark.png */; };
 		952E53D013077003002A3314 /* empty_check_box.gif in Resources */ = {isa = PBXBuildFile; fileRef = 952E53CD13077003002A3314 /* empty_check_box.gif */; };
 		952E53D113077003002A3314 /* Silver-Play-Button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 952E53CE13077003002A3314 /* Silver-Play-Button.jpg */; };
-		952E5471130780F2002A3314 /* kttunstall.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 952E5470130780F2002A3314 /* kttunstall.jpeg */; };
 		952E547B13078235002A3314 /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952E547913078235002A3314 /* SendViewController.m */; };
 		952E547C13078235002A3314 /* SendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952E547A13078235002A3314 /* SendViewController.xib */; };
 		95CB53361307265900FE0CB5 /* ChooseSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB53341307265900FE0CB5 /* ChooseSongsViewController.m */; };
 		95CB53371307265900FE0CB5 /* ChooseSongsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CB53351307265900FE0CB5 /* ChooseSongsViewController.xib */; };
-		95CB533D1307272300FE0CB5 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB533C1307272300FE0CB5 /* Song.m */; };
 		95CB539C130735B900FE0CB5 /* mock_song_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CB539B130735B900FE0CB5 /* mock_song_list.json */; };
 		95CB542013073F1400FE0CB5 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB540D13073F1400FE0CB5 /* ASIAuthenticationDialog.m */; };
 		95CB542113073F1400FE0CB5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB541013073F1400FE0CB5 /* ASIDataCompressor.m */; };
@@ -72,9 +72,8 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* Valentunes_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Valentunes_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4919C89E1391DDC000A1927C /* Valentunes.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Valentunes.xcdatamodel; sourceTree = "<group>"; };
 		4919C8A41391DDF800A1927C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -82,27 +81,30 @@
 		4919C8A91391DF0D00A1927C /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		4919C8AA1391DF0D00A1927C /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		4919C8AB1391DF0D00A1927C /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		4919C91E1392FA0F00A1927C /* tutorial_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial_background.png; sourceTree = "<group>"; };
+		4919CA6F139452A300A1927C /* AllCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCardsTableViewController.h; sourceTree = "<group>"; };
+		4919CA70139452A300A1927C /* AllCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCardsTableViewController.m; sourceTree = "<group>"; };
+		4919CA71139452A300A1927C /* AllCardsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCardsTableViewController.xib; sourceTree = "<group>"; };
+		4919CA751394534400A1927C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		4919CA761394534400A1927C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		49793E18139479F8004183FD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		49793E19139479F8004183FD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		49793E1A139479F8004183FD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		49793E8413952CB1004183FD /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Valentunes-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Valentunes-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		951AFC09130838F800CEC086 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
-		951AFD931308615300CEC086 /* album1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album1.jpg; sourceTree = "<group>"; };
-		951AFD941308615300CEC086 /* album2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album2.jpg; sourceTree = "<group>"; };
-		951AFD951308615300CEC086 /* album3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album3.jpg; sourceTree = "<group>"; };
-		951AFD961308615300CEC086 /* album4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = album4.jpg; sourceTree = "<group>"; };
-		952E5394130767C0002A3314 /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
-		952E5395130767C0002A3314 /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
-		952E5397130767D4002A3314 /* SongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongCell.xib; sourceTree = "<group>"; };
+		952E5394130767C0002A3314 /* TrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCell.h; sourceTree = "<group>"; };
+		952E5395130767C0002A3314 /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
+		952E5397130767D4002A3314 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		952E53CC13077003002A3314 /* Check_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check_mark.png; sourceTree = "<group>"; };
 		952E53CD13077003002A3314 /* empty_check_box.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = empty_check_box.gif; sourceTree = "<group>"; };
 		952E53CE13077003002A3314 /* Silver-Play-Button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Silver-Play-Button.jpg"; sourceTree = "<group>"; };
-		952E5470130780F2002A3314 /* kttunstall.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kttunstall.jpeg; sourceTree = "<group>"; };
 		952E547813078235002A3314 /* SendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendViewController.h; sourceTree = "<group>"; };
 		952E547913078235002A3314 /* SendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
 		952E547A13078235002A3314 /* SendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendViewController.xib; sourceTree = "<group>"; };
 		95CB53331307265900FE0CB5 /* ChooseSongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSongsViewController.h; sourceTree = "<group>"; };
 		95CB53341307265900FE0CB5 /* ChooseSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSongsViewController.m; sourceTree = "<group>"; };
 		95CB53351307265900FE0CB5 /* ChooseSongsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSongsViewController.xib; sourceTree = "<group>"; };
-		95CB533B1307272300FE0CB5 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
-		95CB533C1307272300FE0CB5 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		95CB539B130735B900FE0CB5 /* mock_song_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mock_song_list.json; sourceTree = "<group>"; };
 		95CB540C13073F1400FE0CB5 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		95CB540D13073F1400FE0CB5 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -182,18 +184,9 @@
 				1D3623250D0F684500981E51 /* ValentunesAppDelegate.m */,
 				95CB5463130743D400FE0CB5 /* WebService.h */,
 				95CB5464130743D400FE0CB5 /* WebService.m */,
-				95CB533A1307271900FE0CB5 /* Data */,
-				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				95CB53331307265900FE0CB5 /* ChooseSongsViewController.h */,
-				95CB53341307265900FE0CB5 /* ChooseSongsViewController.m */,
-				95CB53351307265900FE0CB5 /* ChooseSongsViewController.xib */,
-				952E547813078235002A3314 /* SendViewController.h */,
-				952E547913078235002A3314 /* SendViewController.m */,
-				952E547A13078235002A3314 /* SendViewController.xib */,
-				95F9CC27130892BA00E4B39D /* FinishedViewController.h */,
-				95F9CC28130892BA00E4B39D /* FinishedViewController.m */,
-				95F9CC29130892BA00E4B39D /* FinishedViewController.xib */,
+				4919CA751394534400A1927C /* DataManager.h */,
+				4919CA761394534400A1927C /* DataManager.m */,
+				4919CA74139452AC00A1927C /* View Controllers */,
 				952E53931307679F002A3314 /* Cells */,
 			);
 			path = Classes;
@@ -240,7 +233,6 @@
 				4919C89D1391DDC000A1927C /* Valentunes.xcdatamodeld */,
 				952E53CB13076FDB002A3314 /* images */,
 				95CB539B130735B900FE0CB5 /* mock_song_list.json */,
-				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Valentunes-Info.plist */,
 			);
@@ -258,12 +250,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4919CA74139452AC00A1927C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49793DF41394786E004183FD /* Create */,
+				49793DF513947876004183FD /* All */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		49793DF41394786E004183FD /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* CreateViewController.h */,
+				28C286E00D94DF7D0034E888 /* CreateViewController.m */,
+				49793E8413952CB1004183FD /* CreateViewController.xib */,
+				95CB53331307265900FE0CB5 /* ChooseSongsViewController.h */,
+				95CB53341307265900FE0CB5 /* ChooseSongsViewController.m */,
+				95CB53351307265900FE0CB5 /* ChooseSongsViewController.xib */,
+				952E547813078235002A3314 /* SendViewController.h */,
+				952E547913078235002A3314 /* SendViewController.m */,
+				952E547A13078235002A3314 /* SendViewController.xib */,
+				95F9CC27130892BA00E4B39D /* FinishedViewController.h */,
+				95F9CC28130892BA00E4B39D /* FinishedViewController.m */,
+				95F9CC29130892BA00E4B39D /* FinishedViewController.xib */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
+		49793DF513947876004183FD /* All */ = {
+			isa = PBXGroup;
+			children = (
+				4919CA6F139452A300A1927C /* AllCardsTableViewController.h */,
+				4919CA70139452A300A1927C /* AllCardsTableViewController.m */,
+				4919CA71139452A300A1927C /* AllCardsTableViewController.xib */,
+				49793E18139479F8004183FD /* LoginViewController.h */,
+				49793E19139479F8004183FD /* LoginViewController.m */,
+				49793E1A139479F8004183FD /* LoginViewController.xib */,
+			);
+			name = All;
+			sourceTree = "<group>";
+		};
 		952E53931307679F002A3314 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				952E5394130767C0002A3314 /* SongCell.h */,
-				952E5395130767C0002A3314 /* SongCell.m */,
-				952E5397130767D4002A3314 /* SongCell.xib */,
+				952E5394130767C0002A3314 /* TrackCell.h */,
+				952E5395130767C0002A3314 /* TrackCell.m */,
+				952E5397130767D4002A3314 /* TrackCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -271,26 +304,13 @@
 		952E53CB13076FDB002A3314 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				951AFD931308615300CEC086 /* album1.jpg */,
-				951AFD941308615300CEC086 /* album2.jpg */,
-				951AFD951308615300CEC086 /* album3.jpg */,
-				951AFD961308615300CEC086 /* album4.jpg */,
+				4919C91E1392FA0F00A1927C /* tutorial_background.png */,
 				951AFC09130838F800CEC086 /* heart.png */,
-				952E5470130780F2002A3314 /* kttunstall.jpeg */,
 				952E53CC13077003002A3314 /* Check_mark.png */,
 				952E53CD13077003002A3314 /* empty_check_box.gif */,
 				952E53CE13077003002A3314 /* Silver-Play-Button.jpg */,
 			);
 			path = images;
-			sourceTree = "<group>";
-		};
-		95CB533A1307271900FE0CB5 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				95CB533B1307272300FE0CB5 /* Song.h */,
-				95CB533C1307272300FE0CB5 /* Song.m */,
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		95CB540B13073F1400FE0CB5 /* ASIHTTP */ = {
@@ -399,21 +419,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
-				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				95CB53371307265900FE0CB5 /* ChooseSongsViewController.xib in Resources */,
 				95CB539C130735B900FE0CB5 /* mock_song_list.json in Resources */,
-				952E5398130767D4002A3314 /* SongCell.xib in Resources */,
+				952E5398130767D4002A3314 /* TrackCell.xib in Resources */,
 				952E53CF13077003002A3314 /* Check_mark.png in Resources */,
 				952E53D013077003002A3314 /* empty_check_box.gif in Resources */,
 				952E53D113077003002A3314 /* Silver-Play-Button.jpg in Resources */,
-				952E5471130780F2002A3314 /* kttunstall.jpeg in Resources */,
 				952E547C13078235002A3314 /* SendViewController.xib in Resources */,
 				951AFC0A130838F800CEC086 /* heart.png in Resources */,
-				951AFD971308615300CEC086 /* album1.jpg in Resources */,
-				951AFD981308615300CEC086 /* album2.jpg in Resources */,
-				951AFD991308615300CEC086 /* album3.jpg in Resources */,
-				951AFD9A1308615300CEC086 /* album4.jpg in Resources */,
 				95F9CC2B130892BA00E4B39D /* FinishedViewController.xib in Resources */,
+				4919C91F1392FA0F00A1927C /* tutorial_background.png in Resources */,
+				4919CA73139452A300A1927C /* AllCardsTableViewController.xib in Resources */,
+				49793E1C139479F8004183FD /* LoginViewController.xib in Resources */,
+				49793E8513952CB1004183FD /* CreateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,9 +444,8 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ValentunesAppDelegate.m in Sources */,
-				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				28C286E10D94DF7D0034E888 /* CreateViewController.m in Sources */,
 				95CB53361307265900FE0CB5 /* ChooseSongsViewController.m in Sources */,
-				95CB533D1307272300FE0CB5 /* Song.m in Sources */,
 				95CB542013073F1400FE0CB5 /* ASIAuthenticationDialog.m in Sources */,
 				95CB542113073F1400FE0CB5 /* ASIDataCompressor.m in Sources */,
 				95CB542213073F1400FE0CB5 /* ASIDataDecompressor.m in Sources */,
@@ -448,12 +465,15 @@
 				95CB552E13075E5500FE0CB5 /* SBJsonStreamWriterState.m in Sources */,
 				95CB552F13075E5500FE0CB5 /* SBJsonTokeniser.m in Sources */,
 				95CB553013075E5500FE0CB5 /* SBJsonWriter.m in Sources */,
-				952E5396130767C0002A3314 /* SongCell.m in Sources */,
+				952E5396130767C0002A3314 /* TrackCell.m in Sources */,
 				952E547B13078235002A3314 /* SendViewController.m in Sources */,
 				95F9CC2A130892BA00E4B39D /* FinishedViewController.m in Sources */,
 				4919C89F1391DDC000A1927C /* Valentunes.xcdatamodeld in Sources */,
 				4919C8AC1391DF0D00A1927C /* Track.m in Sources */,
 				4919C8AD1391DF0D00A1927C /* Card.m in Sources */,
+				4919CA72139452A300A1927C /* AllCardsTableViewController.m in Sources */,
+				4919CA771394534400A1927C /* DataManager.m in Sources */,
+				49793E1B139479F8004183FD /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

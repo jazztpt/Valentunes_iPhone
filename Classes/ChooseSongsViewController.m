@@ -9,15 +9,15 @@
 #import "ChooseSongsViewController.h"
 
 #import "SendViewController.h"
-#import "Song.h"
 #import "Track.h"
 #import "WebService.h"
 
 
 @implementation ChooseSongsViewController
 
-@synthesize songsArray = _songsArray;
-@synthesize songCell = _songCell;
+@synthesize currentCard = _currentCard;
+@synthesize tracksArray = _tracksArray;
+@synthesize trackCell = _trackCell;
 
 
 #pragma mark -
@@ -31,6 +31,8 @@
 	
 	UIBarButtonItem* doneButton = [[[UIBarButtonItem alloc] initWithTitle:@"Done!" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonTapped:)] autorelease];
 	self.navigationItem.rightBarButtonItem = doneButton;
+    
+    self.tracksArray = [_currentCard.Tracks allObjects];
 }
 
 
@@ -52,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _songsArray.count;
+    return _tracksArray.count;
 }
 
 
@@ -61,19 +63,19 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    SongCell *cell = (SongCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TrackCell *cell = (TrackCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-		[[NSBundle mainBundle] loadNibNamed:@"SongCell" owner:self options:nil];
-		cell = self.songCell;
+		[[NSBundle mainBundle] loadNibNamed:@"TrackCell" owner:self options:nil];
+		cell = self.trackCell;
 		cell.delegate = self;
     }
 	
 	cell.tag = indexPath.row;
 	
-	Track* thisTrack = [_songsArray objectAtIndex:indexPath.row];
+	Track* thisTrack = [_tracksArray objectAtIndex:indexPath.row];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-	cell.songTitleLabel.text = thisTrack.track_name;		//[thisTrack objectForKey:@"track_name"];
+	cell.trackTitleLabel.text = thisTrack.track_name;		//[thisTrack objectForKey:@"track_name"];
 	cell.artistLabel.text = thisTrack.artist_name;			//[thisTrack objectForKey:@"artist_name"];
 	cell.searchTermLabel.text = thisTrack.search_term;		//[thisTrack objectForKey:@"reason"];
 
@@ -102,33 +104,33 @@
 -(void) doneButtonTapped:(id)sender
 {
 	// create the final array from the checked cells
-	NSMutableArray* songsToSend = [NSMutableArray array];
-	for (int i=0; i<_songsArray.count; i++) {
-		SongCell* cell = (SongCell*)[self tableView:(UITableView*)self.view cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+	NSMutableArray* tracksToSend = [NSMutableArray array];
+	for (int i=0; i<_tracksArray.count; i++) {
+		TrackCell* cell = (TrackCell*)[self tableView:(UITableView*)self.view cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
 		if (cell.isChecked == YES) {
-			[songsToSend addObject:[_songsArray objectAtIndex:i]];
+			[tracksToSend addObject:[_tracksArray objectAtIndex:i]];
 		}
 	}
 	
 //	// send these to the server
 //	WebService* wService = [WebService sharedWebService];
 //	[wService addDelegate:self];
-//	[wService phoneCall:songsToSend];
+//	[wService phoneCall:tracksToSend];
 	
-	NSLog(@"tracks array: %@", songsToSend);
+	NSLog(@"tracks array: %@", tracksToSend);
 	
 	SendViewController* sendVC = [[[SendViewController alloc] initWithNibName:@"SendViewController" bundle:nil] autorelease];
-	sendVC.songsToSendArray = [NSArray arrayWithArray:songsToSend];
+	sendVC.tracksToSendArray = [NSArray arrayWithArray:tracksToSend];
 	[self.navigationController pushViewController:sendVC animated:YES];
 }
 
 #pragma mark -
-#pragma mark SongCellDelegate
+#pragma mark TrackCellDelegate
 
 -(void) checkMarkTappedForCellAtIndex:(int)index
 {
-	Song* song = [_songsArray objectAtIndex:index];
-	song.chosen = YES;
+	Track* track = [_tracksArray objectAtIndex:index];
+	track.chosen = YES;
 }
 
 #pragma mark -
@@ -148,8 +150,9 @@
 
 
 - (void)dealloc {
-	self.songsArray = nil;
-	self.songCell = nil;
+	self.currentCard = nil;
+    self.tracksArray = nil;
+	self.trackCell = nil;
 	
     [super dealloc];
 }

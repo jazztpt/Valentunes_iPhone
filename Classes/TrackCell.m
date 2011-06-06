@@ -1,22 +1,22 @@
 //
-//  SongCell.m
+//  TrackCell.m
 //  Valentunes
 //
 //  Created by Anna Callahan on 2/12/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SongCell.h"
+#import "TrackCell.h"
 
 
-@implementation SongCell
+@implementation TrackCell
 
 
 @synthesize delegate = _delegate;
 @synthesize urlString = _urlString;
 @synthesize albumArtString = _albumArtString;
 @synthesize albumImageView = _albumImageView;
-@synthesize songTitleLabel = _songTitleLabel;
+@synthesize trackTitleLabel = _trackTitleLabel;
 @synthesize artistLabel = _artistLabel;
 @synthesize searchTermLabel = _searchTermLabel;
 @synthesize playButton = _playButton;
@@ -108,16 +108,24 @@
 	[_delegate checkMarkTappedForCellAtIndex:self.tag];
 }
 
--(void) webService:(WebService *)webService fetchImageCallback:(ASIHTTPRequest *)request
+#pragma WebServiceDelegate
+
+-(void) webService:(WebService *)webService fetchImageCallbackReturn:(ASIHTTPRequest *)request
 {
 	UIImage* image = [UIImage imageWithData:request.responseData];
 	self.albumImageView.image = image;
+	[_spinner stopAnimating];
+}
+
+-(void) webService:(WebService*)webService didFailWithError:(NSError*)error
+{
+    
 }
 
 
 - (void)dealloc {
 	self.albumImageView = nil;
-	self.songTitleLabel = nil;
+	self.trackTitleLabel = nil;
 	self.artistLabel = nil;
 	self.searchTermLabel = nil;
 	self.playButton = nil;

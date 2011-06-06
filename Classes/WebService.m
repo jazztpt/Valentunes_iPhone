@@ -8,22 +8,25 @@
 
 #import "WebService.h"
 
-//#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "ASIDownloadCache.h"
 #import "JSON.h"
 
 static WebService *sharedWebService = nil;
 
-#define kApiUrl				@"http://127.0.0.1:8000/api/"
-//#define kApiAuthenticate	@"authenticate/"
-//#define kApiUserData		@"userdata/"
-#define kApiSuffixCreate	@"card/"		//@"createcard/"
+#define kApiBaseUrl			@"http://127.0.0.1:8000/api/"
+#define kApiAuthenticate	@"authenticate/"
+#define kApiSuffixCard		@"card/"
 #define kApiSuffixPhone		@"phonecall/"
+
+@interface WebService (Private)
+-(void) setBasicAuth:(ASIHTTPRequest *)request;
+@end
 
 
 @implementation WebService
 
-@synthesize ticket = _ticket;
+@synthesize currentCardId = _currentCardId;
 @synthesize delegates = _delegates;
 @synthesize delegate = _delegate;
 
@@ -58,10 +61,10 @@ static WebService *sharedWebService = nil;
 -(void) postCreate:(NSDictionary*)info
 {
 	NSString* jsonDataString = [NSString stringWithFormat:@"%@", [info JSONRepresentation], nil];
-	NSLog(@"posting create; jsondatastring: %@", jsonDataString);
 	NSData* jsonData = [NSData dataWithBytes:[jsonDataString UTF8String] length:[jsonDataString length]];
 //	
-	NSString* url = [NSString stringWithFormat:@"%@%@", kApiUrl, kApiSuffixCreate];
+	NSString* urlString = [NSString stringWithFormat:@"%@%@", kApiBaseUrl, kApiSuffixCard];
+	NSLog(@"posting create; jsondatastring: %@, url:%@", jsonDataString, urlString);
 	
 //	ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
 //	[request addRequestHeader:@"Content-Type" value:@"multipart/form-data"];
@@ -69,7 +72,7 @@ static WebService *sharedWebService = nil;
 //	[request addPostValue:[info objectForKey:@"to_name"] forKey:@"to_name"];
 //	[request addPostValue:[info objectForKey:@"interests"] forKey:@"interests"];
 	
-	ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+	ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
 	[request addRequestHeader:@"Content-Type" value:@"application/json"];
 
 	[request addRequestHeader:@"Accept" value:@"application/json"];
@@ -77,31 +80,14 @@ static WebService *sharedWebService = nil;
 	[request setDidFinishSelector:@selector(createCallback:)];
 	[request appendPostData:jsonData];
 	[request setTimeOutSeconds:400];
+    
+    [self setBasicAuth:request];
 	
 	[request startAsynchronous];
 	
 	[self retain];
 }
 
-//-(void) checkStatus {
-//	
-//	NSDictionary* ticketDict = [NSDictionary dictionaryWithObjectsAndKeys:self.ticket, @"ticket", nil];
-//	NSString* jsonDataString = [NSString stringWithFormat:@"%@", [ticketDict JSONRepresentation], nil];
-//	NSLog(@"checking status; jsondatastring: %@", jsonDataString);
-//	NSData* jsonData = [NSData dataWithBytes:[jsonDataString UTF8String] length:[jsonDataString length]];
-//	//	
-//	NSString* url = [NSString stringWithFormat:@"%@%@", kApiUrl, kApiSuffixStatus];
-//	
-//	ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
-//	[request addRequestHeader:@"Content-Type" value:@"application/json"];
-//	
-//	[request addRequestHeader:@"Accept" value:@"application/json"];
-//	[request setDelegate:self];
-//	[request setDidFinishSelector:@selector(statusCallback:)];
-//	[request appendPostData:jsonData];
-//	
-//	[request startAsynchronous];
-//}
 
 -(void) phoneCall:(NSDictionary*)phoneCallDict
 {
@@ -111,7 +97,7 @@ static WebService *sharedWebService = nil;
 	NSLog(@"posting phone call; jsondatastring: %@", jsonDataString);
 	NSData* jsonData = [NSData dataWithBytes:[jsonDataString UTF8String] length:[jsonDataString length]];
 	//	
-	NSString* url = [NSString stringWithFormat:@"%@%@", kApiUrl, kApiSuffixPhone];
+	NSString* url = [NSString stringWithFormat:@"%@%@", kApiBaseUrl, kApiSuffixPhone];
 	
 	ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
 	[request addRequestHeader:@"Content-Type" value:@"application/json"];
@@ -120,53 +106,77 @@ static WebService *sharedWebService = nil;
 	[request setDelegate:self];
 	[request setDidFinishSelector:@selector(phoneCallCallback:)];
 	[request appendPostData:jsonData];
+	[request setRequestMethod:@"PUT"];
+    
+    [self setBasicAuth:request];
 	
 	[request startAsynchronous];
 }
 
+-(void) getAllCards
+{
+	NSString* urlString = [NSString stringWithFormat:@"%@%@", kApiBaseUrl, kApiSuffixCard];
+	
+	ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
+	[request addRequestHeader:@"Accept" value:@"application/json"];
+	[request setDelegate:self];
+	[request setDidFinishSelector:@selector(getAllCardsCallback:)];
+	
+	//basic auth
+	[self setBasicAuth:request];
+	
+	[request startAsynchronous];
+}
 
+#pragma mark -
 #pragma callbacks
+
+//-(void) authenticateCallback:(ASIHTTPRequest*) request
+//{
+////	NSDictionary* authDictionary = [[request responseString] JSONValue];
+//	
+//	[_delegate webService:self authenticationReceived:authDictionary];
+//	
+//	[self release];
+//}
 
 -(void) createCallback:(ASIHTTPRequest*)request
 {
-	NSString* returnString = [request responseString];
 	
-	NSLog(@"create callback return string: %@", returnString);
-	NSDictionary* returnDictionary = [returnString JSONValue];
+	NSLog(@"create callback return string: %@", [request responseString]);
+//    NSLog(@"create callback return");
+	NSDictionary* responseDictionary = [[request responseString] JSONValue];
 	
-	self.ticket = [returnDictionary objectForKey:@"id"];
-	
-	NSArray* array = [returnDictionary objectForKey:@"track_list"];
+
 	
 //	for (id <WebServiceDelegate> delegate in self.delegates) {
 //		if ([delegate respondsToSelector:@selector(createCallbackReturn:)]) {
-			[_delegate createCallbackReturn:array];
+			[_delegate createCallbackReturn:responseDictionary];
 //		}
 //	}
 	[self release];
 }
 
-//-(void) statusCallback:(ASIHTTPRequest*)request
-//{
-//	NSString* returnString = [request responseString];
-//	
-//	NSLog(@"status callback return string: %@", returnString);
-//	
-//	NSDictionary* returnDictionary = [returnString JSONValue];
-//	
-//
-//	for (id <WebServiceDelegate> delegate in self.delegates) {
-//		if ([delegate respondsToSelector:@selector(statusCallbackReturn:)]) {
-//			[delegate statusCallbackReturn:returnDictionary];
-//		}
-//	}
-//}
 
 -(void) phoneCallCallback:(ASIHTTPRequest*)request
 {
 	NSString* returnString = [request responseString];
 	
 	NSLog(@"phone call callback return string: %@", returnString);
+	
+	[self release];
+}
+
+-(void) getAllCardsCallback:(ASIHTTPRequest*) request
+{
+	NSLog(@"get all cards: %@", [request responseString]);
+	NSDictionary* responseDictionary = [[request responseString] JSONValue];
+	
+	NSArray* cardsArray = [responseDictionary objectForKey:@"objects"];
+	
+	[_delegate webService:self getAllCardsReturn:cardsArray];
+	
+	[self release];
 }
 
 
@@ -219,8 +229,8 @@ static WebService *sharedWebService = nil;
 {
 	NSLog(@"response string: %@", [request responseString]);
 	
-	if (_delegate != nil && [_delegate respondsToSelector:@selector(webService:fetchImageCallback:)]) {
-		[_delegate webService:self fetchImageCallback:request];
+	if (_delegate != nil && [_delegate respondsToSelector:@selector(webService:fetchImageCallbackReturn:)]) {
+		[_delegate webService:self fetchImageCallbackReturn:request];
 	}
 	
 	[self release];
@@ -230,6 +240,16 @@ static WebService *sharedWebService = nil;
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
 	NSLog(@"REQUEST FAILED: %@ %@", request, [request error]);
+}
+
+#pragma mark Private
+
+-(void) setBasicAuth:(ASIHTTPRequest*)request
+{
+	request.username = [[NSUserDefaults standardUserDefaults] objectForKey:kAuthUsernameKey];
+	request.password = [[NSUserDefaults standardUserDefaults] objectForKey:kAuthPasswordKey];
+	[request setAuthenticationScheme: (NSString*)kCFHTTPAuthenticationSchemeBasic]; 
+	
 }
 
 @end

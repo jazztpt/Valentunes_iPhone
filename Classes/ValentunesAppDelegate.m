@@ -7,13 +7,13 @@
 //
 
 #import "ValentunesAppDelegate.h"
-#import "RootViewController.h"
+#import "CreateViewController.h"
 
 
 @implementation ValentunesAppDelegate
 
 @synthesize window;
-@synthesize navigationController;
+@synthesize tabBarController;
 
 
 #pragma mark -
@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
     
     // Add the navigation controller's view to the window and display.
-    [self.window addSubview:navigationController.view];
+    [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -191,7 +191,7 @@
 
 
 - (void)dealloc {
-	[navigationController release];
+	[tabBarController release];
 	[window release];
 	[super dealloc];
 }

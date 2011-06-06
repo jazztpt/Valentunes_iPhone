@@ -18,13 +18,13 @@
 	UITextField* _toPhoneTextField;
 	UITextView* _noteTextView;
 	
-	NSArray* _songsToSendArray;
+	NSArray* _tracksToSendArray;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField* fromPhoneTextField;
 @property (nonatomic, retain) IBOutlet UITextField* toPhoneTextField;
 @property (nonatomic, retain) IBOutlet UITextView* noteTextView;
-@property (nonatomic, retain) NSArray* songsToSendArray;
+@property (nonatomic, retain) NSArray* tracksToSendArray;
 
 -(IBAction) sendButtonTapped;
 

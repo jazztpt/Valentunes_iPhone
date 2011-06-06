@@ -1,5 +1,5 @@
 //
-//  SongCell.h
+//  TrackCell.h
 //  Valentunes
 //
 //  Created by Anna Callahan on 2/12/11.
@@ -11,17 +11,17 @@
 #import "ASIHTTPRequest.h"
 #import "WebService.h"
 
-@protocol SongCellDelegate;
+@protocol TrackCellDelegate;
 
 
-@interface SongCell : UITableViewCell <UIWebViewDelegate, WebServiceDelegate> {
-	id <SongCellDelegate> _delegate;
+@interface TrackCell : UITableViewCell <UIWebViewDelegate, WebServiceDelegate> {
+	id <TrackCellDelegate> _delegate;
 	
 	NSString* _urlString;
 	NSString* _albumArtString;
 	
 	UIImageView*	_albumImageView;
-	UILabel*		_songTitleLabel;
+	UILabel*		_trackTitleLabel;
 	UILabel*		_artistLabel;
 	UILabel*		_searchTermLabel;
 	UIButton*		_playButton;
@@ -37,11 +37,11 @@
 	UIActivityIndicatorView *_spinner;
 }
 
-@property (nonatomic, assign) id <SongCellDelegate> delegate;
+@property (nonatomic, assign) id <TrackCellDelegate> delegate;
 @property (nonatomic, retain) NSString* urlString;
 @property (nonatomic, retain) NSString* albumArtString;
 @property (nonatomic, retain) IBOutlet UIImageView* albumImageView;
-@property (nonatomic, retain) IBOutlet UILabel*	songTitleLabel;
+@property (nonatomic, retain) IBOutlet UILabel*	trackTitleLabel;
 @property (nonatomic, retain) IBOutlet UILabel*	artistLabel;
 @property (nonatomic, retain) IBOutlet UILabel*	searchTermLabel;
 @property (nonatomic, retain) IBOutlet UIButton* playButton;
@@ -62,6 +62,6 @@
 @end
 
 
-@protocol SongCellDelegate <NSObject>
+@protocol TrackCellDelegate <NSObject>
 -(void) checkMarkTappedForCellAtIndex:(int)index;
 @end
