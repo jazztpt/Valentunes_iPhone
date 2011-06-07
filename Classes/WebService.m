@@ -44,7 +44,8 @@ static WebService *sharedWebService = nil;
 
 -(id) init
 {
-	if (self = [super init])
+    self = [super init];
+	if (self)
 	{
 		_delegates = [[NSMutableArray array] retain];
 		return self;
@@ -171,6 +172,13 @@ static WebService *sharedWebService = nil;
 {
 	NSLog(@"get all cards: %@", [request responseString]);
 	NSDictionary* responseDictionary = [[request responseString] JSONValue];
+    
+    if ([responseDictionary objectForKey:@"code"]) {
+        NSString* code = [responseDictionary objectForKey:@"code"];
+        NSString* message = [responseDictionary objectForKey:@"message"];
+        NSError* error = [NSError errorWithDomain:@"ServerDomain" code:[code intValue] userInfo:[NSDictionary dictionaryWithObjectsAndKeys:message, @"message", nil]];
+        [_delegate webService:self didFailWithError:error];
+    }
 	
 	NSArray* cardsArray = [responseDictionary objectForKey:@"objects"];
 	
@@ -240,6 +248,9 @@ static WebService *sharedWebService = nil;
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
 	NSLog(@"REQUEST FAILED: %@ %@", request, [request error]);
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(webService:didFailWithError:)]) {
+        [_delegate webService:self didFailWithError:[request error]];
+    }
 }
 
 #pragma mark Private

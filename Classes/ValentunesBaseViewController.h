@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WebService.h"
 
-@interface ValentunesBaseViewController : UIViewController {
+
+@interface ValentunesBaseViewController : UIViewController <WebServiceDelegate> {
     
 }
+
+-(void) errorFromServer:(NSDictionary*)dictionaryError;
 
 @end

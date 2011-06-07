@@ -46,6 +46,8 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
 	_heartView.hidden = YES;
 	_loadingLabel.hidden = YES;
 	[_spinner stopAnimating];
@@ -102,25 +104,22 @@
 {
 	// create the track objects
     Card* currentCard = [Card cardWithDictionary:responseDictionary];
-    
-//	NSMutableArray* tracksArray = [NSMutableArray array];
-//	for (NSDictionary* trackDict in responseArray) {
-//		Track* track = [Track trackWithDictionary:trackDict];
-//		[tracksArray addObject:track];
-//	}
-	
-	ChooseSongsViewController* chooseController = [[[ChooseSongsViewController alloc] initWithNibName:@"ChooseSongsViewController" bundle:nil] autorelease];
-	chooseController.currentCard = currentCard;
-	[self.navigationController pushViewController:chooseController animated:YES];
-	
+
+    if ([responseDictionary objectForKey:@"code"]) {
+        [super errorFromServer:responseDictionary];
+    }
+	else {
+        ChooseSongsViewController* chooseController = [[[ChooseSongsViewController alloc] initWithNibName:@"ChooseSongsViewController" bundle:nil] autorelease];
+        chooseController.currentCard = currentCard;
+        [self.navigationController pushViewController:chooseController animated:YES];
+	}
 }
 
 -(void) webService:(WebService*)webService didFailWithError:(NSError*)error
 {
     _heartView.hidden = YES;
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your request failed...please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
-    [alert release];
+    
+    [super webService:webService didFailWithError:error];
 }
 
 #pragma UITextField

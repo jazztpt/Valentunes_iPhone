@@ -31,7 +31,6 @@
 +(WebService*) sharedWebService;
 -(void) addDelegate:(id)delegate;
 
--(void) authenticateWithEmail:(NSString *)email password:(NSString *)password;
 - (NSDictionary*)fetchImage:(NSURL*)imageUrl;
 
 -(void) postCreate:(NSDictionary*)info;
@@ -40,7 +39,6 @@
 -(void) getAllCards;
 
 // callbacks
--(void) authenticateCallback:(ASIHTTPRequest*) request;
 -(void) createCallback:(ASIHTTPRequest*) request;
 -(void) phoneCallCallback:(ASIHTTPRequest*) request;
 -(void) getAllCardsCallback:(ASIHTTPRequest*) request;

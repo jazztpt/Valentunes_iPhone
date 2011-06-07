@@ -16,6 +16,7 @@
 @implementation AllCardsTableViewController
 
 @synthesize webService = _webService;
+@synthesize tableView = _tableView;
 
 
 #pragma mark -
@@ -45,6 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
  
+    self.webService = nil;
     self.webService = [[[WebService alloc] init] autorelease];
     _webService.delegate = self;
     [_webService getAllCards];
@@ -178,9 +180,14 @@
 	[self.tableView reloadData];
 }
 
--(void) webService:(WebService*)webService didFailWithError:(NSError*)error
+
+-(void) setWebService:(WebService*)webSrvc
 {
-    
+    if (_webService != nil) {
+        _webService.delegate = nil;
+    }
+	[_webService release];
+	_webService = [webSrvc retain];
 }
 
 
@@ -202,6 +209,7 @@
 
 - (void)dealloc {
 	self.webService = nil;
+    self.tableView = nil;
 	
     [super dealloc];
 }

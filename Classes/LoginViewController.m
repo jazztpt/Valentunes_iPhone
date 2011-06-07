@@ -44,12 +44,6 @@
 	UIBarButtonItem* barButton = [[UIBarButtonItem alloc] initWithTitle:@"Log in" style:UIBarButtonItemStyleBordered target:self action:@selector(loginButtonTapped)];
 	self.navigationItem.rightBarButtonItem = barButton;
 	[barButton release];
-	
-	if ([[NSUserDefaults standardUserDefaults] objectForKey:kAuthUsernameKey] && [[NSUserDefaults standardUserDefaults] objectForKey:kAuthPasswordKey]) {
-		[_spinner startAnimating];
-		_loggingInLabel.text = @"Logging in...";
-		_loggingInLabel.hidden = NO;
-	}
 
 }
 
@@ -104,7 +98,7 @@
 {
 	if (_emailTextField.text.length < 3 || _passwordTextField.text.length < 1) {
 		
-		UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Missing Fields" message:@"Please use a valid email and password and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Missing Fields" message:@"Please use a valid username and password and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		

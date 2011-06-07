@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ValentunesBaseViewController.h"
 #import "WebService.h"
 
-@interface CreateViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
+@interface CreateViewController : ValentunesBaseViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
 	UITextField* _fromNameTextField;
 	UITextField* _toNameTextField;
 	UITextView*  _interestsTextView;

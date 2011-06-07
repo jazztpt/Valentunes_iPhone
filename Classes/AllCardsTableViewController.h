@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ValentunesBaseViewController.h"
 #import "WebService.h"
 
 
-@interface AllCardsTableViewController : UITableViewController <WebServiceDelegate> {
+@interface AllCardsTableViewController : ValentunesBaseViewController <WebServiceDelegate> {
 	NSArray* _cardsArray;
+    
+    UITableView* _tableView;
 	
 	WebService* _webService;
 }
 
 @property (nonatomic, retain) WebService* webService;
+@property (nonatomic, retain) IBOutlet UITableView* tableView;
 
 @end

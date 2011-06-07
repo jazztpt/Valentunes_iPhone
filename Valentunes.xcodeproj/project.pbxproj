@@ -22,6 +22,8 @@
 		4919CA72139452A300A1927C /* AllCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919CA70139452A300A1927C /* AllCardsTableViewController.m */; };
 		4919CA73139452A300A1927C /* AllCardsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4919CA71139452A300A1927C /* AllCardsTableViewController.xib */; };
 		4919CA771394534400A1927C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4919CA761394534400A1927C /* DataManager.m */; };
+		495D26EE139E4C8800FEE9CC /* ValentunesBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495D26EC139E4C8800FEE9CC /* ValentunesBaseViewController.m */; };
+		495D26EF139E4C8800FEE9CC /* ValentunesBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495D26ED139E4C8800FEE9CC /* ValentunesBaseViewController.xib */; };
 		49793E1B139479F8004183FD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49793E19139479F8004183FD /* LoginViewController.m */; };
 		49793E1C139479F8004183FD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49793E1A139479F8004183FD /* LoginViewController.xib */; };
 		49793E8513952CB1004183FD /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49793E8413952CB1004183FD /* CreateViewController.xib */; };
@@ -87,6 +89,9 @@
 		4919CA71139452A300A1927C /* AllCardsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCardsTableViewController.xib; sourceTree = "<group>"; };
 		4919CA751394534400A1927C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		4919CA761394534400A1927C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		495D26EB139E4C8800FEE9CC /* ValentunesBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValentunesBaseViewController.h; sourceTree = "<group>"; };
+		495D26EC139E4C8800FEE9CC /* ValentunesBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValentunesBaseViewController.m; sourceTree = "<group>"; };
+		495D26ED139E4C8800FEE9CC /* ValentunesBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValentunesBaseViewController.xib; sourceTree = "<group>"; };
 		49793E18139479F8004183FD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		49793E19139479F8004183FD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		49793E1A139479F8004183FD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -255,6 +260,9 @@
 			children = (
 				49793DF41394786E004183FD /* Create */,
 				49793DF513947876004183FD /* All */,
+				495D26EB139E4C8800FEE9CC /* ValentunesBaseViewController.h */,
+				495D26EC139E4C8800FEE9CC /* ValentunesBaseViewController.m */,
+				495D26ED139E4C8800FEE9CC /* ValentunesBaseViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -432,6 +440,7 @@
 				4919CA73139452A300A1927C /* AllCardsTableViewController.xib in Resources */,
 				49793E1C139479F8004183FD /* LoginViewController.xib in Resources */,
 				49793E8513952CB1004183FD /* CreateViewController.xib in Resources */,
+				495D26EF139E4C8800FEE9CC /* ValentunesBaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +483,7 @@
 				4919CA72139452A300A1927C /* AllCardsTableViewController.m in Sources */,
 				4919CA771394534400A1927C /* DataManager.m in Sources */,
 				49793E1B139479F8004183FD /* LoginViewController.m in Sources */,
+				495D26EE139E4C8800FEE9CC /* ValentunesBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

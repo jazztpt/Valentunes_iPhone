@@ -29,6 +29,11 @@
 	self.title = @"Thanks!";
 }
 
+-(void) anotherButtonTapped
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

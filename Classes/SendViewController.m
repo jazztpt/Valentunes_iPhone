@@ -81,15 +81,16 @@
 	[webService phoneCall:dictionary];
 	
 	FinishedViewController* finishedVC = [[FinishedViewController alloc] initWithNibName:@"FinishedViewController" bundle:nil];
+    
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Another" style: UIBarButtonItemStyleBordered target: finishedVC action: @selector(anotherButtonTapped)];
+    [[finishedVC navigationItem] setLeftBarButtonItem: newBackButton];
+    [newBackButton release];
+    
 	[self.navigationController pushViewController:finishedVC animated:YES];
 }
 
 #pragma WebServiceDelegate
 
--(void) webService:(WebService*)webService didFailWithError:(NSError*)error
-{
-    
-}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.

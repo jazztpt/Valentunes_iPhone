@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "ValentunesBaseViewController.h"
 #import "WebService.h"
 
 
-@interface SendViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
+@interface SendViewController : ValentunesBaseViewController <UITextFieldDelegate, UITextViewDelegate, WebServiceDelegate> {
 	
 	IBOutlet UIView* _movingView;
 	
